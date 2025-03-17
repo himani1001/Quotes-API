@@ -1,6 +1,6 @@
 const loadingQuotes = async () => {
     try{
-        const loadingQuotesFetch = await fetch('https://api.chucknorris.io/jokes/random', {
+        const loadingQuotesFetch = await fetch('https://api.chuccknorris.io/jokes/random', {
             headers: {
                 Accept: "application/json"
             }
