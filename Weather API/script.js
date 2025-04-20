@@ -1,8 +1,16 @@
+const loaderContainer = document.querySelector('.loader-container');
+const box = document.querySelector('#box');
+
+window.addEventListener('load', () => {
+    loaderContainer.classList.add('hidden')
+    box.classList.add('visible')
+})
+
 const date = document.getElementById('date');
 const city = document.getElementById('city');
 const temp = document.getElementById('temp');
 const tempImg = document.getElementById('tempImg');
-const tempMin = document.getElementById('tempMin');
+const tempMin = document.getElementById('tempLow');
 const tempMax = document.getElementById('tempMax');
 const description = document.getElementById('description');
 
@@ -34,7 +42,7 @@ const getWeather = async() => {
         tempImg.innerHTML = `<img src = "https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png" />`;
         temp.innerHTML = `<h2>${Math.round(weatherData.main.temp)}°C</h2>`;
         tempMax.innerHTML = `${weatherData.main.temp_max}°C`;
-        tempMin.innerHTML = `${weatherData.main.temp_min}°C`;
+        tempLow.innerHTML = `${weatherData.main.temp_min}°C`;
     }
     catch(error){
         console.log(error);
